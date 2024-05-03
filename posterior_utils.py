@@ -132,7 +132,7 @@ def lnlike(H0, z, zerr, weight, pb_gal, distmu, diststd, distnorm, H0_min, H0_ma
         pgw = np.zeros((ngals, z_s.shape[0]))
         d_s = cosmo.luminosity_distance(z_s).value
         for k in range(ngals):
-            pgw[k,:] = pb_gal[k] * distnorm[k] * gauss(distmu[k],diststd[k],d_s) * weight[k] 
+            pgw[k,:] = pb_gal[k] * distnorm[k] * gauss(distmu[k],diststd[k],d_s) * weight[k] #*(H0/100)
 
     
     #AP this is older
@@ -282,7 +282,7 @@ def lnprob(H0, z, zerr, weight, pb_gal, distmu, diststd, distnorm, pixarea, H0_m
 
 
 # absolue mag calculation, from Will Hartley
-def dist_mod(z_vals,d='/hildafs/projects/phy220048p/wballard/scanner/'):
+def dist_mod(z_vals,d='/global/homes/w/wballard/standard-sirens/'):
    z = np.load(d+'dist_mod_kcorr.npz')['z']
    dm = np.load(d+'dist_mod_kcorr.npz')['dm']
    f_dm = interpolate.interp1d(z, dm, kind='cubic', bounds_error=False, fill_value=0)

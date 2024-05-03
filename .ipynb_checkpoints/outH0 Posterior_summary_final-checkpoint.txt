@@ -1,2 +1,0 @@
-# nevents maglim zerr H0_maxlike H0_errp H0_errm H0_median H0_true
-39.797933 65.124388 3.540193 77.695558 

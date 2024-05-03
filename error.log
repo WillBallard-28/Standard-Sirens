@@ -1,2 +1,0 @@
-/global/u2/w/wballard/standard-sirens/posterior_utils.py:80: RuntimeWarning: divide by zero encountered in arctanh
-  x = np.arctanh(x)
